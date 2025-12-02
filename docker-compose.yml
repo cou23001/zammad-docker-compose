@@ -1,6 +1,4 @@
 ---
-version: "3.8"
-
 x-shared:
   zammad-service: &zammad-service
     environment: &zammad-environment
@@ -97,9 +95,9 @@ services:
     <<: *zammad-service
     command: ["zammad-nginx"]
     expose:
-      - "${NGINX_PORT:-8080}"
+      - "${NGINX_PORT:-8085}"
     ports:
-      - "${NGINX_EXPOSE_PORT:-8080}:${NGINX_PORT:-8080}"
+      - "${NGINX_EXPOSE_PORT:-8085}:${NGINX_PORT:-8085}"
     depends_on:
       - zammad-railsserver
 
